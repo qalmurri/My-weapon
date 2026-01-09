@@ -83,6 +83,19 @@ require("lazy").setup({
       })
     end,
   },
+  -- 💡 Highlight simbol di bawah cursor
+  {
+    "RRethy/vim-illuminate",
+    event = "BufReadPost",
+    config = function()
+      require("illuminate").configure({
+        providers = { "lsp", "treesitter", "regex" },
+        delay = 200,
+        filetypes_denylist = { "NvimTree", "TelescopePrompt", "lazy" },
+        min_count_to_highlight = 2,
+      })
+    end,
+  },
 
   -- 🐍 LSP Python (Pyright)
   {
