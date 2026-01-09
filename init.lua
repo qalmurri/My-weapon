@@ -28,16 +28,6 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   rocks = { enabled = false, hererocks = false, },
 
-  -- 🎨 Colorscheme
-  {
-    "navarasu/onedark.nvim",
-    priority = 1000,
-    config = function()
-      require("onedark").setup({ style = "dark" })
-      require("onedark").load()
-    end,
-  },
-
   -- ✨ Auto pairs {}, (), []
   {
     "windwp/nvim-autopairs",
@@ -57,16 +47,6 @@ require("lazy").setup({
     config = function()
       require("telescope").setup({})
     end,
-  },
-
-  -- 🖱️ Cursor effect (opsional, visual only)
-  {
-    "sphamba/smear-cursor.nvim",
-    opts = {
-      stiffness = 0.5,
-      trailing_stiffness = 0.25,
-      distance_stop_animating = 0.1,
-    },
   },
 
   -- 🧠 Autocomplete (CMP)
@@ -165,7 +145,6 @@ end)
 -- BASIC PYTHON SETTINGS
 -- ==========================================================================
 vim.opt.number = true
-vim.opt.relativenumber = true
 vim.opt.expandtab = true
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
